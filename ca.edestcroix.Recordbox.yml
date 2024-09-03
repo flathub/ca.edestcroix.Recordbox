@@ -42,7 +42,7 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/edestcroix/Recordbox/
-        tag: v0.8.0
+        tag: v0.8.1
       - type: inline
         contents: |
           [source.vendored-sources]
