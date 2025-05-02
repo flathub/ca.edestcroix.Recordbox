@@ -1,6 +1,6 @@
 app-id: ca.edestcroix.Recordbox
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: recordbox
 sdk-extensions:
@@ -32,7 +32,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler
-        tag: v0.14.0
+        tag: v0.16.0
   - name: recordbox
     builddir: true
     buildsystem: meson
