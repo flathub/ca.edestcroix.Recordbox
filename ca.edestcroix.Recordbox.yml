@@ -34,8 +34,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/edestcroix/Recordbox/
-        tag: v0.11.0-beta.2
-        commit: c2b238f1df861fbf6caea7421d530f201294993b
+        tag: v0.11.0-beta.3
+        commit: 10478ca08c2884d78e38174091bf2ba55f7e6b89
       - type: inline
         contents: |
           [source.vendored-sources]
