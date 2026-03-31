@@ -1,6 +1,6 @@
 app-id: ca.edestcroix.Recordbox
 runtime: org.gnome.Platform
-runtime-version: "48"
+runtime-version: "50"
 sdk: org.gnome.Sdk
 command: recordbox
 sdk-extensions:
@@ -12,40 +12,10 @@ finish-args:
   - --socket=fallback-x11
   - --device=dri
   - --socket=wayland
-  - --filesystem=home
+  - --filesystem=xdg-music
   - --socket=pulseaudio
   - --env=RUST_LOG=recordbox=warn
-cleanup:
-  - /include
-  - /lib/pkgconfig
-  - /man
-  - /share/doc
-  - /share/gtk-doc
-  - /share/man
-  - /share/pkgconfig
-  - "*.la"
-  - "*.a"
 modules:
-  - name: glycin-loaders
-    buildsystem: meson
-    config-opts:
-      - -Dlibglycin=false
-      - -Dtests=false
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/glycin/1.2/glycin-1.2.1.tar.xz
-        sha256: ccc578e9a3e83d0dc1535737d1fda09baa95c7167f5e5ecb15f786654094eed5
-        x-checker-data:
-          type: gnome
-          name: glycin
-  - name: blueprint-compiler
-    buildsystem: meson
-    cleanup:
-      - "*"
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/jwestman/blueprint-compiler
-        tag: v0.16.0
   - name: recordbox
     builddir: true
     buildsystem: meson
@@ -54,7 +24,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/edestcroix/Recordbox/
-        tag: v0.10.4
+        tag: v0.11.0
+        commit: f1a67ec4a8f7b13abb677515292cd003b469e1f0
       - type: inline
         contents: |
           [source.vendored-sources]
